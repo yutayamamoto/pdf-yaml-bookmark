@@ -24,13 +24,19 @@ def matchSection(line):
     """
     return re.match(r'^(\s*)(.*?)\s+([0-9]+)\s*$', line)
 
-# Not: we currently escape special characters in heading text in an ad-hoc way.
+# Note: we currently escape special characters in heading text in an ad-hoc way.
 # TODO fix this
 def escape_special_chars_in_heading(heading):
     if not(':' in heading):
         return heading
     else:
-        return '"' + heading + '"'
+        if not ('"' in heading):
+            return '"' + heading + '"'
+        if not ("'" in heading):
+            return "'" + heading + "'"
+        else:
+            raise ValueError("Sorry, we currently do not support a heading that contains special charcters in a complicated way. See the source code for detail.")
+            exit()
 
 def bkm_to_yaml(bkmText):
     bkmText = bkmText.split('\n')

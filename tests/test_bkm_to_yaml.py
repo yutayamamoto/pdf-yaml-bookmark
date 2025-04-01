@@ -5,7 +5,7 @@ import pathlib
 import sys
 sys.path.append(str(pathlib.Path(__file__).parent.parent) + "/src")
 
-import pdf_yaml_bookmark.bkm_to_yaml as by
+from pdf_yaml_bookmark import bkm_to_yaml
 
 sample_bkm = '''\
 # this is a comment
@@ -54,5 +54,5 @@ sample_yaml = '''\
 
 class TestBkmToYaml(unittest.TestCase):
     def test_bkm_to_yaml(self):
-        self.assertEqual(by.bkm_to_yaml(sample_bkm), sample_yaml)
+        self.assertEqual(bkm_to_yaml(sample_bkm), sample_yaml)
 

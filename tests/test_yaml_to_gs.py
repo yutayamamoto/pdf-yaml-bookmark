@@ -5,7 +5,7 @@ import pathlib
 import sys
 sys.path.append(str(pathlib.Path(__file__).parent.parent) + "/src")
 
-import pdf_yaml_bookmark.yaml_to_gs as yg
+from pdf_yaml_bookmark import yaml_to_gs
 
 sample_yaml = '''\
 # this is a comment
@@ -56,5 +56,5 @@ sample_gs=f'''\
 
 class TestYamlToGs(unittest.TestCase):
     def test_yaml_to_gs(self):
-        self.assertEqual(yg.yaml_to_gs(sample_yaml), sample_gs)
+        self.assertEqual(yaml_to_gs(sample_yaml), sample_gs)
 

@@ -8,8 +8,8 @@ import typer
 
 import pdf_yaml_bookmark.common as common
 import pdf_yaml_bookmark.run_gs as run_gs
-import pdf_yaml_bookmark.bkm_to_yaml as bkm_to_yaml
-import pdf_yaml_bookmark.yaml_to_gs as yaml_to_gs
+import pdf_yaml_bookmark as bkm_to_yaml
+import pdf_yaml_bookmark as yaml_to_gs
 
 app = typer.Typer()
 
